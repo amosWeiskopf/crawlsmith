@@ -25,14 +25,12 @@ func New() *Extractor {
 
 // ExtractText extracts clean text from HTML using trafilatura
 func (e *Extractor) ExtractText(htmlContent string) (string, error) {
-	result, err := trafilatura.Extract([]byte(htmlContent), trafilatura.Options{
-		IncludeComments: false,
-		IncludeTables:   true,
-		IncludeImages:   false,
-		Deduplicate:     true,
-	})
+	result, err := trafilatura.Extract(strings.NewReader(htmlContent), trafilatura.Options{})
 	if err != nil {
 		return "", err
+	}
+	if result == nil {
+		return "", nil
 	}
 	return result.ContentText, nil
 }
