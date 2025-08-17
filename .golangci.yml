@@ -1,0 +1,83 @@
+run:
+  timeout: 5m
+  tests: true
+  skip-dirs:
+    - vendor
+    - test/mocks
+
+linters:
+  enable:
+    - gofmt
+    - goimports
+    - golint
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+    - structcheck
+    - varcheck
+    - ineffassign
+    - deadcode
+    - typecheck
+    - gosec
+    - megacheck
+    - dupl
+    - misspell
+    - lll
+    - nakedret
+    - prealloc
+    - exportloopref
+    - gocritic
+    - gochecknoinits
+    - gocyclo
+    - gocognit
+    - godox
+    - funlen
+
+linters-settings:
+  gofmt:
+    simplify: true
+  goimports:
+    local-prefixes: github.com/amosWeiskopf/crawlsmith
+  golint:
+    min-confidence: 0.8
+  govet:
+    check-shadowing: true
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+  lll:
+    line-length: 120
+  funlen:
+    lines: 100
+    statements: 50
+  gocyclo:
+    min-complexity: 15
+  gocognit:
+    min-complexity: 20
+  dupl:
+    threshold: 100
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - errcheck
+        - dupl
+        - gosec
+        - funlen
+    - path: cmd/
+      linters:
+        - gochecknoinits
+    - linters:
+        - lll
+      source: "^//go:generate "

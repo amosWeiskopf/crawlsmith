@@ -1,0 +1,107 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+coverage.out
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# IDE directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# API keys and secrets
+**/secrets.yaml
+**/secrets.json
+config.local.yaml
+
+# Output files
+data/
+output/
+results/
+*.tsv
+*.json
+!go.mod
+!go.sum
+!package.json
+!package-lock.json
+
+# Log files
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Build artifacts
+build/
+release/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Python cache (if using Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+
+# Local configuration
+config.local.yml
+config.local.yaml
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Parquet files
+*.parquet
+*.parquet.zst
+
+# Crawl output
+crawl_*/
+*_analysis.txt
+*_questions.json
+*_answers.json
+site_deep_*.json
+tiny_*.json
+small_*.tsv
+internal_links_map*.tsv
+origin_metadata.tsv
+emailsPhones.json
